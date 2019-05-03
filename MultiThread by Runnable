@@ -1,0 +1,46 @@
+package multithread;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class MultiThread {
+
+    public static void main(String[] args) throws InterruptedException {
+
+       myThread oobj=new myThread();
+       Thread obj=new Thread(oobj); 
+       obj.start();
+   
+        for(int i=0;i<10;i++)
+    {System.out.println(1);
+            try {
+                Thread.sleep(700);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(A.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       //  System.out.println(2);
+    }    
+            
+    }
+    
+}
+class myThread extends A implements Runnable
+{
+    @Override
+    public void run(){
+         for(int i=0;i<10;i++)
+    {System.out.println(21);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(A.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       //  System.out.println(2);
+    } }
+}
+
+
+class A
+{
+    
+}
